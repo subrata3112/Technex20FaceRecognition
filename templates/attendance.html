@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Take Attendance</title>
+    <style>
+        body {
+            background-image: url("https://www.aindralabs.com/wp-content/uploads/World-water-day-1.png");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .top {
+            padding: 0px;
+        }
+        
+        h1,
+        h2 {
+            color: white;
+            text-transform: uppercase;
+        }
+        
+        #player {
+            position: absolute;
+        }
+        
+        .atten {
+            position: absolute;
+            top: 80%;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        #Take_atten {
+            background-color: transparent;
+            font-size: 50px;
+            border: 2px solid black;
+            border-radius: 10px;
+            color: wheat;
+            font-family: serif;
+        }
+        
+        #Take_atten:hover {
+            background-color: black;
+            font-size: 60px;
+        }
+        
+        #btn {
+            position: absolute;
+            background-color: black;
+            font-size: 50px;
+            border: 2px solid black;
+            border-radius: 10px;
+            color: wheat;
+            font-family: serif;
+            top: 45%;
+            left: 37%;
+        }
+        
+        h3 {
+            color: white;
+            font-size: 15px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="top">
+        <nav class="navbar navbar-dark bg-dark">
+
+            <h2><em>{{college_name}}</em></h2>
+            <h3><em>{{date}}</em></h3>
+            <h1> <i style="color:black; font-size:55px; " class="fa fa-user icon "></i><span>  </span> <em>{{name}}</em></h1>
+        </nav>
+
+    </div>
+    <button id="btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Attendance History
+      </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Attendance History</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <span>17th jan 2020 -- </span><em>45</em>
+                    </br>
+                    <span>18th jan 2020 -- </span><em>50</em>
+                    </br>
+                    <span>19th jan 2020 -- </span><em>60</em>
+                    </br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="atten">
+        <form action="{{url_for('Report')}}">
+            <input id="Take_atten" type="submit" value="Start Attendance">
+        </form>
+    </div>
+
+</body>
+
+</html>
