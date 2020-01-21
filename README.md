@@ -9,5 +9,5 @@ First install required libs:
  6. pip3 install pyrebase
  
 Now, you are ready to run.
-Run hackthn.py
+Run  " python3 hackthn.py " in terminal in linux and " python hackthn.py " in command prompt in windows.
 Now open a web browser and go to link generated in your terminal.
